@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Feedback Survey</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <h1>Customer Feedback Survey</h1>
+    <p>We value your opinion. Please take a moment to provide feedback on our product.</p>
+
+    <form id="survey-form" onsubmit="return validateForm()">
+      <div>
+      <!-- Name -->
+      <label for="name">Name <span class="required">*</span></label><br>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+      <span class="error-message" id="name-error"></span>
+      </div>
+
+      <div>
+      <!-- Email -->
+      <label for="email">Email <span class="required">*</span></label><br>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <span class="error-message" id="email-error"></span>
+      </div>
+
+      <div>
+      <!-- Age -->
+      <label for="age">Age</label><br>
+      <input type="number" id="age" name="age" placeholder="Enter your age">
+      </div>
+
+      <div>
+      <!-- Role -->
+      <label for="role">Role <span class="required">*</span></label><br>
+      <select id="role" name="role" required>
+        <option value="">Select your role</option>
+        <option value="student">Student</option>
+        <option value="professional">Professional</option>
+        <option value="entrepreneur">Entrepreneur</option>
+      </select>
+      <span class="error-message" id="role-error"></span>
+      </div>
+
+      <div>
+      <!-- Recommendation -->
+      <label>Would you recommend our product to a friend? <span class="required">*</span></label><br>
+      <div class="radio-group">
+        <input type="radio" id="yes" name="recommendation" value="yes" required>
+        <label for="yes">Yes</label>
+        <br>
+        <input type="radio" id="no" name="recommendation" value="no" required>
+        <label for="no">No</label>
+      </div>
+      <span class="error-message" id="recommendation-error"></span>
+      </div>
+      <br>
+
+      <div>
+      <!-- What did you like? -->
+      <label>What did you like about the product?</label><br>
+      <div class="checkbox-group">
+        <input type="checkbox" id="quality" name="liked" value="quality">
+        <label for="quality">Quality</label>
+        <br>
+        <input type="checkbox" id="design" name="liked" value="design">
+        <label for="design">Design</label>
+        <br>
+        <input type="checkbox" id="price" name="liked" value="price">
+        <label for="price">Price</label>
+      </div>
+      <br>
+
+      <div>
+      <!-- Additional Remarks -->
+      <label for="remarks">Additional Remarks</label><br>
+      <textarea id="remarks" name="remarks" placeholder="Enter your feedback here"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="confirmation-message" class="confirmation-message"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
