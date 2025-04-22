@@ -12,7 +12,11 @@ function validateForm() {
     if (name === '') {
       document.getElementById('name-error').textContent = 'Name is required.';
       document.getElementById('name-error').style.display = 'block';
+      document.getElementById("name").style.border = "1px solid #ff0000";
       isValid = false;
+    }
+    else{
+      document.getElementById("name").style.border = "none";
     }
   
     // Email validation
@@ -21,11 +25,16 @@ function validateForm() {
     if (email === '') {
       document.getElementById('email-error').textContent = 'Email is required.';
       document.getElementById('email-error').style.display = 'block';
+      document.getElementById("email").style.border = "1px solid #ff0000";
       isValid = false;
     } else if (!emailPattern.test(email)) {
       document.getElementById('email-error').textContent = 'Please enter a valid email address.';
       document.getElementById('email-error').style.display = 'block';
+      document.getElementById("email").style.border = "1px solid #ff0000";
       isValid = false;
+    }
+    else{
+      document.getElementById("email").style.border = "none";
     }
   
     // Role validation
@@ -33,7 +42,11 @@ function validateForm() {
     if (role === '') {
       document.getElementById('role-error').textContent = 'Please select your role.';
       document.getElementById('role-error').style.display = 'block';
+      document.getElementById("role").style.border = "1px solid #ff0000";
       isValid = false;
+    }
+    else{
+      document.getElementById("role").style.border = "none";
     }
   
     // Recommendation validation
